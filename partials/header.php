@@ -18,11 +18,11 @@
       </div>
       <div class="navbar-nav">
         <div class="nav-item">
-          <!-- <?php if (is_user_logged_in()) : ?>
+          <?php if (is_user_logged_in()) : ?>
             <a href="logout.php" class="nav-link">Log out</a>
           <?php else: ?>
             <a href="login.php" class="nav-link">Log in</a>
-          <?php endif; ?> -->
+          <?php endif; ?>
         </div>
         <div class="nav-item">
             <a href="register.php" class="nav-link">Register</a>
