@@ -1,4 +1,19 @@
 <?php
+
+if (array_all_keys_exist($_POST, "username", "password", "password-1", "email")) {
+//to verify:
+//username does not exist
+//password and password-1 are the same
+//email does not exist 
+
+//if any error ->messages
+
+//if success:
+//hash password
+//create new user in users.json
+//redirect index.php
+}
+
 ?>
 <div class="d-flex justify-content-center">
   <form class="col col-12 col-sm-8 col-lg-6 col-xl-4" method="post" action="login.php" novalidate>
