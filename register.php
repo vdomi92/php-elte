@@ -1,4 +1,5 @@
 <?php
+require_once("utils/init.php");
 
 if (array_all_keys_exist($_POST, "username", "password", "password-1", "email")) {
 //to verify:
@@ -11,13 +12,15 @@ if (array_all_keys_exist($_POST, "username", "password", "password-1", "email"))
 //if success:
 //hash password
 //create new user in users.json
-//redirect index.php
+//redirect login.php
 }
-
+//TODO: állapottartás az inputokra hiba esetén
 ?>
+<?php require("partials/header.php"); ?>
+
 <div class="d-flex justify-content-center">
   <form class="col col-12 col-sm-8 col-lg-6 col-xl-4" method="post" action="login.php" novalidate>
-    <h2>Log in</h2>
+    <h2>Register</h2>
 
     <div class="my-3">
       <label for="username" class="form-label">Username</label>
