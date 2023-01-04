@@ -14,7 +14,7 @@
   <header class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <div class="navbar-brand ms-3">
-        <img src="resources/monkey_logo.jpg" alt="Brand logo">
+        <a href="index.php"><img src="resources/monkey_logo.jpg" alt="Brand logo"></a>
       </div>
       <div class="navbar-nav">
         <div class="nav-item">

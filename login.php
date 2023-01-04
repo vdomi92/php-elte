@@ -3,7 +3,8 @@ require_once("utils/init.php");
 
 if (array_all_keys_exist($_POST, "username", "password")) {
   foreach ($users as $user) {
-    if ($user["username"] === $_POST["username"] && password_verify($_POST["password"], $user["password"])) {
+    $hash = password_hash($user["password"], PASSWORD_BCRYPT);
+    if ($user["username"] === $_POST["username"] && password_verify($_POST["password"], $hash)) {
       $found_user = $user;
       break;
     }

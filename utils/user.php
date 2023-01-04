@@ -30,3 +30,7 @@ function authorize($user, string $required_role = "user") {
     redirect("login.php");
   }
 }
+
+function verify_password($entered, $stored): bool{
+  return $entered===$stored;
+}
