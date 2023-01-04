@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
-  <title>Szavazólapok</title>
+  <title>Szavazás</title>
 </head>
 
 <body class="h-100 d-flex flex-column">

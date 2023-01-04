@@ -17,3 +17,5 @@ $users = load_from_file(DATA_FILE_USERS);
 $polls = load_from_file(DATA_FILE_VOTES);
 
 $current_user = get_logged_in_user($users);
+
+$messages = load_from_flash("messages") ?? [];
