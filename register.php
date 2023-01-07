@@ -2,7 +2,7 @@
 require_once("utils/init.php");
 
 if (array_all_keys_exist($_POST, "username", "password", "password-1", "email")) {
-//to verify:
+//tasks to verify:
 //username does not exist
 //password and password-1 are the same
 //email does not exist
@@ -61,7 +61,6 @@ if(!$nameError && !$emailError && !$passwordError){
 }
 
 }
-//TODO: állapottartás az inputokra hiba esetén
 ?>
 <?php require("partials/header.php"); ?>
 <div class="d-flex justify-content-center">
@@ -92,3 +91,5 @@ if(!$nameError && !$emailError && !$passwordError){
 
   </form>
 </div>
+
+<?php require("partials/footer.php"); ?>

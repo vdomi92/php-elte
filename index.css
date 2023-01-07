@@ -1,8 +1,33 @@
+.navbar {
+  background-color: white;
+}
+
 .navbar-brand {
-  height: 100px;
+  height: 70px;
 }
 
 .navbar-brand img {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
+}
+
+.introduction {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header,
+.paragraph {
+  display: flex;
+  align-self: center;
+  font-style: italic;
+}
+
+.header {
+  font-weight: 800;
+}
+.paragraph {
+  font-weight: 600;
 }

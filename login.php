@@ -41,3 +41,5 @@ if (array_all_keys_exist($_POST, "username", "password")) {
     <?php require("partials/messages.php"); ?>
   </form>
 </div>
+
+<?php require("partials/footer.php"); ?>

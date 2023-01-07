@@ -8,6 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
   <title>Szavazás</title>
+  <style>
+    <?php include 'index.css'; ?>
+</style>
 </head>
 
 <body class="h-100 d-flex flex-column">
