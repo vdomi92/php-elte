@@ -1,38 +1,45 @@
 A beadandóban egy olyan webalkalmazást kell készítenetek, ahol a bejelentkezett felhasználók szavazólapokra (kérdőívekre) tudják leadni a szavazataikat. A szavazólapokat az admin felhasználó tudja létrehozni, amikre a felhasználók egy, vagy több opció leadásával tudnak szavazni. A Főoldalon kilistázódik az összes rendszerben lévő szavazólap, lent azok, amelyeknek a határideje már lejárt, fent pedig a még folyamatban lévő szavazások. Úgy állítottuk nektek össze, hogy a minimálisan teljesítendő feladatok elkészítéséhez ne kelljen munkamenetet és hitelesítést használnotok, így megkönnyítve a ti dolgotokat is ebben a rendhagyó vizsgaidőszakban. Kérdéseiteket tegyétek fel a tárgy Teams csoportjának Általános csatornájában, vagy a Gyakorlatvezetőtöknél!
 
-Feladatok
-Előkészületek
-Az alkalmazásban szükségünk lesz szavazólapok, felhasználók, és a szavazólapokra a felhasználók által leadott szavazatok tárolására. Lent mutatunk erre egy lehetséges tárolási formátumot, de tetszőleges formátum választható!
-A feladat része az is, hogy a beküldött csomagban szerepeljen néhány már felvett szavazólap, amire szavazatot lehet leadni. Minden felhasználó csak egy szavazatot tud leadni az összes szavazólapon, viszont azt a leadási határidőig felülírhatja. Ha az oldalunk nem tartalmaz hitelesítést, akkor egy felhasználó bármennyi szavazatot le tud adni.
-A felhasználók közé fel kell venni egy speciális felhasználót, aki admin jogokkal rendelkezik. Neki a belépési adatai rögzítettek, lásd az admin funkciók cím alatt!
-Főoldal
-A listaoldalon, avagy a főoldalon statikus szöveggel jelenjen meg egy kreatív cím és egy rövid ismertetés az oldalról.
-A főoldal elérhető azonosítatlan felhasználók számára is, akik szabadon tudják böngészni az itt megjelenő szavazólapokat.
-Az oldalon legfelül mindig a legújabban hozzáadott szavazólap jelenjen meg, alatta pedig a többi szavazólap a hozzáadás dátuma szerint csökkenő sorrendben. Az oldalon két részletben legyenek kilistázva a szavazólapok:
+Feladatok</br>
+Előkészületek</br>
+Az alkalmazásban szükségünk lesz szavazólapok, felhasználók, és a szavazólapokra a felhasználók által leadott szavazatok tárolására. Lent mutatunk erre egy lehetséges tárolási formátumot, de tetszőleges formátum választható!</br>
+A feladat része az is, hogy a beküldött csomagban szerepeljen néhány már felvett szavazólap, amire szavazatot lehet leadni. Minden felhasználó csak egy szavazatot tud leadni az összes szavazólapon, viszont azt a leadási határidőig felülírhatja. Ha az oldalunk nem tartalmaz hitelesítést, akkor egy felhasználó bármennyi szavazatot le tud adni.</br>
+A felhasználók közé fel kell venni egy speciális felhasználót, aki admin jogokkal rendelkezik. Neki a belépési adatai rögzítettek, lásd az admin funkciók cím alatt!</br>
+Főoldal</br>
+A listaoldalon, avagy a főoldalon statikus szöveggel jelenjen meg egy kreatív cím és egy rövid ismertetés az oldalról.</br>
+A főoldal elérhető azonosítatlan felhasználók számára is, akik szabadon tudják böngészni az itt megjelenő szavazólapokat.</br>
+Az oldalon legfelül mindig a legújabban hozzáadott szavazólap jelenjen meg, alatta pedig a többi szavazólap a hozzáadás dátuma szerint csökkenő sorrendben. Az oldalon két részletben legyenek kilistázva a szavazólapok:</br>
 Fent megjelennek azok a szavazólapok, amelyek határideje még nem járt le.
 Alatta pedig megjelennek a már lezárt szavazólapok és eredményeik.
 Minden szavazólapnál jelenjenek meg a következő elemek:
-szavazás sorszáma
-a létrehozás ideje
-a leadási határideje
-szavazógomb
-A szavazólapokhoz tartozó gombbal a szavazatunkat tudjuk leadni az aktuális szavazólap szavazóoldalán. Amennyiben az oldalunk tartalmaz munkamenetet és hitelesítést, és az adott felhasználó nincsen bejelentkezve, abban az esetben a felhasználót a bejelentkező oldalra irányítsa át.
-Szavazóoldal
+
+<ul>
+<li>szavazás sorszáma</li>
+<li>a létrehozás ideje</li>
+<li>a leadási határideje</li>
+<li>szavazógomb</li>
+</ul>
+A szavazólapokhoz tartozó gombbal a szavazatunkat tudjuk leadni az aktuális szavazólap szavazóoldalán. Amennyiben az oldalunk tartalmaz munkamenetet és hitelesítést, és az adott felhasználó nincsen bejelentkezve, abban az esetben a felhasználót a bejelentkező oldalra irányítsa át.</br>
+Szavazóoldal</br>
 A szavazóoldalon jelenjen meg az adott szavazólaphoz tartozó információk:
-a szavazás szövegezése
-választási lehetőségek
-leadás határideje
-létrehozás ideje
-A szavazóoldalon a szavazási lehetőségek után jelenjen meg a szavazás leadása gomb, melyre kattintva a szavazatunk tartósan eltárolódik. Ellenőrizzük le, hogy a felhasználó kiválasztotta-e valamelyik lehetőséget, ha nem, akkor a leadás után jelezzük neki. Jelezzük azt is, ha sikeres volt a szavazás leadása.
-Szavazás létrehozásának oldala
-A szavazás létrehozásának oldalán jelenjen meg egy form, ahol a következő adatokat lehet kitölteni, és amiket el fog menteni:
-a szavazás szövegezése (text)
-választási lehetőségek (textarea, az egyszerűség kedvéért, aminek minden egyes sorában lehet egy szavazási lehetőséget megadni)
-lehetséges-e több szavazat leadása (radio)
-leadás határideje (date)
-létrehozás ideje (date, habár nem kell kitölteni, ezt is el kell menteni)
-leadásgomb (submit)
-Amennyiben van a megoldásodban hitelesítés és jogosultságkezelés, akkor szavazólapot csak admin tudjon létrehozni! (lásd: admin funkciók)
+<ul>
+<li>a szavazás szövegezése</li>
+<li>választási lehetőségek</li>
+<li>leadás határideje</li>
+<li>létrehozás ideje</li>
+</ul>
+A szavazóoldalon a szavazási lehetőségek után jelenjen meg a szavazás leadása gomb, melyre kattintva a szavazatunk tartósan eltárolódik. Ellenőrizzük le, hogy a felhasználó kiválasztotta-e valamelyik lehetőséget, ha nem, akkor a leadás után jelezzük neki. Jelezzük azt is, ha sikeres volt a szavazás leadása.</br>
+Szavazás létrehozásának oldala</br>
+A szavazás létrehozásának oldalán jelenjen meg egy form, ahol a következő adatokat lehet kitölteni, és amiket el fog menteni:</br>
+<ul>
+<li>a szavazás szövegezése (text)</li>
+<li>választási lehetőségek (textarea, az egyszerűség kedvéért, aminek minden egyes sorában lehet egy szavazási lehetőséget megadni)</li>
+<li>lehetséges-e több szavazat leadása (radio)</li>
+<li>leadás határideje (date)</li>
+<li>létrehozás ideje (date, habár nem kell kitölteni, ezt is el kell menteni)</li>
+<li>leadásgomb (submit)</li>
+<li>Amennyiben van a megoldásodban hitelesítés és jogosultságkezelés, akkor szavazólapot csak admin tudjon létrehozni! (lásd: admin funkciók)</li>
+</ul>
 Hitelesítési oldalak
 A főoldalról legyen lehetőség elérni a bejelentkező és regisztrációs oldalt!
 Regisztráció során meg kell adni a felhasználónevet, egy email címet és a jelszót kétszer. Mindegyik megadása kötelező, az email címnek email formátumúnak kell lennie, a kétszer beírt jelszóknak pedig egyeznie kell. Regisztrációs hiba esetén jelenjenek meg hibaüzenetek! Az űrlap pedig legyen állapottartó! Sikeres regisztráció után kerüljünk a bejelentkező oldalra, és mentsük el az adatainkat.
