@@ -10,6 +10,8 @@ require_once("partials/header.php");
     <p class="paragraph">Here you can choose from any of polls and give us your very important opinion. Select a poll and choose wisely.</p>
 </div>
 
+<?php require("active.php"); ?>
+<?php require("expired.php"); ?>
 
 <?php require("partials/messages.php"); ?>
 

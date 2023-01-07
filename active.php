@@ -8,6 +8,8 @@
 //kérdés
 //válaszok
 ?>
+<h2>Currently active polls:</h2>
+
 <?php foreach($activePolls as $poll):?>
 
 <div class="active">
@@ -16,15 +18,15 @@
         <div class="infobox">
 
             <div class="id">
-                <?= $poll["id"] ?>
+                Id: <?= $poll["id"] ?>
             </div>
              
             <div class="createdAt">
-                <?= $poll["createdAt"] ?>
+                Created at: <?= $poll["createdAt"] ?>
             </div>
 
             <div class="deadline">
-                <?= $poll["deadline"] ?>
+                Deadline: <?= $poll["deadline"] ?>
             </div>
 
         </div>
@@ -36,9 +38,9 @@
             </div>
 
             <div class="answers">
-                <?php foreach($poll["answers"] as $answer): ?>
+                <?php foreach($poll["answers"] as $answerText => $answer): ?>
                     <div class="answerOption">
-                        <?= $answer ?>
+                        <?= `$answerText: $answer` ?>
                     </div>
                 <?php endforeach; ?>
             </div>
