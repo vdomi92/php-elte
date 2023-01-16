@@ -1,0 +1,23 @@
+{
+  "userid1": {
+    "id": "userid1",
+    "username": "user3",
+    "email": "email3@email.hu",
+    "password": "user3",
+    "isAdmin": false
+  },
+  "userid2": {
+    "id": "userid2",
+    "username": "user2",
+    "email": "email2@email.hu",
+    "password": "user2",
+    "isAdmin": false
+  },
+  "userid63b6caff5cd539.27505939": {
+    "id": "userid63b6caff5cd539.27505939",
+    "username": "domi",
+    "email": "vataidomonkos@gmail.com",
+    "password": "$2y$10$nER.VRcuD9XH7iqzaCcw7.0TSJzONiN2PjbykOCVTM6JRUZoXaZd.",
+    "isAdmin": false
+  }
+}

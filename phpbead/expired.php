@@ -9,10 +9,11 @@
 //válaszok
 require_once("utils/user.php");
 ?>
-<h2 class="d-flex justify-content-center mt-5">Currently active polls:</h2>
+<h2 class="d-flex justify-content-center mt-5">Expired polls:</h2>
 
-<?php foreach($activePolls as $poll):?>
-<div class="active d-flex flex-column align-self-center mt-5">     
+<?php foreach($expiredPolls as $poll):?>
+
+<div class="expired d-flex flex-column align-self-center mt-5">        
     <div class="infobox d-flex flex-column align-self-flex-start">
 
             <div class="id">
@@ -34,19 +35,22 @@ require_once("utils/user.php");
         <div class="question align-self-flex-start">
                 <?= $poll["question"] ?>
         </div>
-
+        <ul>
+            <?php foreach($poll["answers"] as $answerText => $answer): ?>
+                <li><?php echo $answerText . ": " . $answer; ?> </li>
+            <?php endforeach; ?>
+        </ul>
         <div class="voteButton align-self-center">
-                <?php if (!isUserVotedOnPoll($poll['voted'], $users)) :?>
-                    <?php if(is_user_logged_in()) :?>
-                        <button type="button" class="btn btn-primary"><a href="<?php echo 'poll.php?id='.$poll['id']; ?>">Szavazás</a></button>
+                <?php if(get_logged_in_user($users)) :?>
+                        <button type="button" class="btn btn-primary"><a  href="<?php echo 'poll.php?id='.$poll['id']; ?>">Szavazás megtekintése</a></button>
                     <?php else : ?>
-                        <button type="button" class="btn btn-primary"><a href="login.php">Jelentkezzen be</a></button>  
+                        <button type="button" class="btn btn-primary"><a href="login.php">Jelentkezzen be</a></button>
                     <?php endif; ?>        
-                <?php else:?>
-                    <button type="button" class="btn btn-primary"><a href="<?php echo 'poll.php?id='.$poll['id'];?>">Szavazat módosítás</a></button>
-                <?php endif; ?>  
         </div>
+
     </div>
+
+    
 </div>
 
 <?php endforeach; ?>
