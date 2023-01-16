@@ -30,3 +30,19 @@ function authorize($user, string $required_role = "user") {
     redirect("login.php");
   }
 }
+
+function isUserVotedOnPoll($voted, $users){
+  $user = get_logged_in_user($users);
+  if(!$user){
+    return false;
+  }else{
+    $hasVoted = false;
+    foreach($voted as $voterId => $answerKey){
+        if($voterId === $user['id']){
+          $hasVoted = true;
+        }
+    }
+  }
+
+  return $hasVoted;
+}

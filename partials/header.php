@@ -20,6 +20,12 @@
         <a href="index.php"><img src="resources/monkey_logo.jpg" alt="Brand logo"></a>
       </div>
       <div class="navbar-nav">
+        <?php if (is_user_logged_in()) : ?>
+          <div class="nav-item"> 
+            <a href="createpoll.php" class="nav-link">Create poll</a>
+          </div>
+        <?php endif; ?>
+
         <div class="nav-item">
           <?php if (is_user_logged_in()) : ?>
             <a href="logout.php" class="nav-link">Log out</a>

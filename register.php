@@ -43,16 +43,15 @@ if($passwordError){
 //create new user in users.json
 //redirect login.php
 if(!$nameError && !$emailError && !$passwordError){
-  $hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
   $newUser = [
     "id" => uniqid("userid", true),
     "username" => $_POST["username"],
     "email" => $_POST["email"],
-    "password" => $hash,
+    "password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
     "isAdmin" => false,
   ];
-  $c = count($users);
+  $c = count($users) + 1;
   $users["userId{$c}"] = $newUser;
 
   save_to_file("data/users.json", $users);

@@ -28,8 +28,8 @@ $activePolls = array_filter($polls, function($poll){
     return (new DateTime($poll['deadline']) >= $today);
 });
 
-array_multisort (array_column($expiredPolls, 'deadline'), SORT_DESC, $expiredPolls);
-array_multisort (array_column($activePolls, 'deadline'), SORT_DESC, $activePolls);
+array_multisort (array_column($expiredPolls, 'createdAt'), SORT_DESC, $expiredPolls);
+array_multisort (array_column($activePolls, 'createdAt'), SORT_DESC, $activePolls);
 
 $current_user = get_logged_in_user($users);
 
