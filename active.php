@@ -12,7 +12,6 @@ require_once("utils/user.php");
 <h2 class="d-flex justify-content-center mt-5">Currently active polls:</h2>
 
 <?php foreach($activePolls as $poll):?>
-
 <div class="active d-flex flex-column align-self-center mt-5">     
     <div class="infobox d-flex flex-column align-self-flex-start">
 

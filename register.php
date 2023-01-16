@@ -1,63 +1,80 @@
 <?php
 require_once("utils/init.php");
 
+
+
 if (array_all_keys_exist($_POST, "username", "password", "password-1", "email")) {
-//tasks to verify:
-//username does not exist
-//password and password-1 are the same
-//email does not exist
-$nameError = false;
-foreach($users as $user){
-  if($user["username"] === $_POST["username"]){
+  //tasks to verify:
+  //username does not exist
+  //password and password-1 are the same
+  //email does not exist
+  $nameError = false;
+  if($_POST['username'] == ""){
     $nameError = true;
-    break;
+    $messages[]= ["type" => "danger", "text" => "Please fill out username"];
   }
-}
 
-$emailError = false; 
-foreach($users as $user){
-  if($user["email"] === $_POST["email"]){
+  $passwordError = false;
+  if($_POST['password'] == "" || $_POST['password-1'] == ""){
+    $passwordError = true;
+    $messages[]= ["type" => "danger", "text" => "Please fill out both passwords"];
+  }
+
+  $emailError = false;
+  if($_POST['email'] == ""){
     $emailError = true;
-    break;
+    $messages[]= ["type" => "danger", "text" => "Please fill out email address"];
   }
-}
+  
+  foreach($users as $user){
+    if($user["username"] === $_POST["username"]){
+      $nameError = true;
+      break;
+    }
+  }
+ 
+  foreach($users as $user){
+    if($user["email"] === $_POST["email"]){
+      $emailError = true;
+      break;
+    }
+  }
 
-$passwordError = false;
-if($_POST["password"] !== $_POST["password-1"]){
-  $passwordError = true;
-}
+  if($_POST["password"] !== $_POST["password-1"]){
+    $passwordError = true;
+  }
 
-//if any error ->messages
-if($nameError){
-  $messages[] = ["type" => "danger", "text" => "Name is already taken"];
-}
-if($emailError){
-  $messages[] = ["type" => "danger", "text" => "Email is already in use"];
-}
-if($passwordError){
-  $messages[] = ["type" => "danger", "text" => "Passwords do not match"];
-}
+  //if any error ->messages
+  if($nameError){
+    $messages[] = ["type" => "danger", "text" => "Name is already taken"];
+  }
+  if($emailError){
+    $messages[] = ["type" => "danger", "text" => "Email is already in use"];
+  }
+  if($passwordError){
+    $messages[] = ["type" => "danger", "text" => "Passwords do not match"];
+  }
 
-//if success:
-//hash password
-//create new user in users.json
-//redirect login.php
-if(!$nameError && !$emailError && !$passwordError){
+  //if success:
+  //hash password
+  //create new user in users.json
+  //redirect login.php
+  if(!$nameError && !$emailError && !$passwordError){
+    $newUserId = uniqid("userid", true);
+    $newUser = [
+      "id" => $newUserId,
+      "username" => $_POST["username"],
+      "email" => $_POST["email"],
+      "password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
+      "isAdmin" => false,
+    ];
 
-  $newUser = [
-    "id" => uniqid("userid", true),
-    "username" => $_POST["username"],
-    "email" => $_POST["email"],
-    "password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
-    "isAdmin" => false,
-  ];
-  $c = count($users) + 1;
-  $users["userId{$c}"] = $newUser;
+    $users[$newUserId] = $newUser;
 
-  save_to_file("data/users.json", $users);
+    save_to_file("data/users.json", $users);
 
-  redirect("login.php");
-}
+    redirect("login.php");
+  }
 
 }
 ?>
@@ -90,5 +107,5 @@ if(!$nameError && !$emailError && !$passwordError){
 
   </form>
 </div>
-
+<?php require("partials/messages.php"); ?>
 <?php require("partials/footer.php"); ?>

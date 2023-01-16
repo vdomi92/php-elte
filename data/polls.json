@@ -1,1 +1,72 @@
-{"poll1":{"id":"poll1","question":"Szeretn\u00e9d-e, hogy legyen INGYEN P\u00f6tty\u00f6s automata a L\u00e1gym\u00e1nyoson?","options":["igen","nem"],"isMultiple":false,"createdAt":"2020-12-04","deadline":"2021-12-12","answers":{"igen":2,"nem":0},"voted":{"userid1":["igen"],"userid2":["igen"]}},"poll2":{"id":"poll2","question":"Miket tartalmazzon a P\u00f6tty\u00f6s automata?","options":["Klasszikus T\u00far\u00f3 Rudi","Karamell\u00e1s Guru","Tejszelet","Fitness Rudi"],"isMultiple":true,"createdAt":"2022-12-05","deadline":"2024-02-13","answers":{"Klasszikus T\u00far\u00f3 Rudi":3,"Karamell\u00e1s Guru":2,"Tejszelet":2,"Fitness Rudi":2},"voted":{"userid1":["Klasszikus T\u00far\u00f3 Rudi","Karamell\u00e1s Guru","Tejszelet","Fitness Rudi"],"userid2":["Klasszikus T\u00far\u00f3 Rudi","Karamell\u00e1s Guru","Tejszelet","Fitness Rudi"],"userid63b6caff5cd539.27505939":["Klasszikus T\u00far\u00f3 Rudi"]}}}
+{
+  "poll1": {
+    "id": "poll1",
+    "question": "Szeretn\u00e9d-e, hogy legyen INGYEN P\u00f6tty\u00f6s automata a L\u00e1gym\u00e1nyoson?",
+    "options": ["igen", "nem"],
+    "isMultiple": false,
+    "createdAt": "2020-12-04 21:20:36",
+    "deadline": "2021-12-12",
+    "answers": { "igen": 3, "nem": 0 },
+    "voted": {
+      "userid1": ["igen"],
+      "userid2": ["igen"],
+      "userid63b6caff5cd539.27505939": ["igen"]
+    }
+  },
+  "poll2": {
+    "id": "poll2",
+    "question": "Miket tartalmazzon a P\u00f6tty\u00f6s automata?",
+    "options": [
+      "Klasszikus T\u00far\u00f3 Rudi",
+      "Karamell\u00e1s Guru",
+      "Tejszelet",
+      "Fitness Rudi"
+    ],
+    "isMultiple": true,
+    "createdAt": "2022-12-05 21:20:36",
+    "deadline": "2024-02-13",
+    "answers": {
+      "Klasszikus T\u00far\u00f3 Rudi": 2,
+      "Karamell\u00e1s Guru": 3,
+      "Tejszelet": 2,
+      "Fitness Rudi": 2
+    },
+    "voted": {
+      "userid1": [
+        "Klasszikus T\u00far\u00f3 Rudi",
+        "Karamell\u00e1s Guru",
+        "Tejszelet",
+        "Fitness Rudi"
+      ],
+      "userid2": [
+        "Klasszikus T\u00far\u00f3 Rudi",
+        "Karamell\u00e1s Guru",
+        "Tejszelet",
+        "Fitness Rudi"
+      ],
+      "userid63b6caff5cd539.27505939": ["Karamell\u00e1s Guru"]
+    }
+  },
+  "poll63c5ae6c08c3f4.58191941": {
+    "id": "poll63c5ae6c08c3f4.58191941",
+    "question": "K\u00e9rd\u00e9sem?",
+    "options": ["V\u00e1laszlehet\u0151s\u00e9g1", "v\u00e1lasz 2"],
+    "isMultiple": false,
+    "createdAt": "2023-01-16 21:20:35 ",
+    "deadline": "2023-02-05",
+    "answers": { "V\u00e1laszlehet\u0151s\u00e9g1": 1, "v\u00e1lasz 2": 0 },
+    "voted": {
+      "userid63b6caff5cd539.27505939": ["V\u00e1laszlehet\u0151s\u00e9g1"]
+    }
+  },
+  "poll63c5b194616d59.91788763": {
+    "id": "poll63c5b194616d59.91788763",
+    "question": "Most ugrik a majom a v\u00edzbe?",
+    "options": ["V\u00e9gre m\u00e1r", "Ideje volt", "Neeem"],
+    "isMultiple": false,
+    "createdAt": "2023-01-16 21:20:36",
+    "deadline": "2023-01-30",
+    "answers": { "V\u00e9gre m\u00e1r": 1, "Ideje volt": 0, "Neeem": 0 },
+    "voted": { "userid63b6caff5cd539.27505939": ["V\u00e9gre m\u00e1r"] }
+  }
+}
